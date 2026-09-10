@@ -39,7 +39,7 @@ public static class SimulationHandler
       foreach (KeyValuePair<GridCell, int> entry in neighbourCounts)
       {
          int n = entry.Value;
-         // Born on exactly 3; survives on 2 or 3.
+         
          if (n == 3 || (n == 2 && liveCells.Contains(entry.Key)))
             next.Add(entry.Key);
       }
