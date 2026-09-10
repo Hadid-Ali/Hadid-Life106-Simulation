@@ -25,7 +25,7 @@ public static class FileIOComponent
                 || !long.TryParse(parts[0], out long x)
                 || !long.TryParse(parts[1], out long y))
             {
-                Debug.LogWarning($"[GameOfLife] Skipping malformed line: '{rawLine}'");
+                Debug.LogWarning($"Skipping malformed line: '{rawLine}'");
                 continue;
             }
 
