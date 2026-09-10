@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
    {
       if (textAsset == null)
       {
-         Debug.LogError("[GameOfLife] No input TextAsset assigned.");
+         Debug.LogError("No input TextAsset assigned.");
          return;
       }
 
