@@ -3,19 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-/// <summary>
-/// Reads and writes the Life 1.06 text format. This is the only place that knows
-/// what the format looks like; the simulator deals purely in <see cref="GridCell"/>s.
-/// </summary>
 public static class FileIOComponent
 {
-    public static readonly string HEADER = "#Life 1.06";
-
-    /// <summary>
-    /// Parses Life 1.06 text into a de-duplicated live-cell set. Blank lines and
-    /// '#' comment lines are ignored; malformed coordinate lines are skipped with
-    /// a warning.
-    /// </summary>
+    private static readonly string HEADER = "#Life 1.06";
+    
     public static HashSet<GridCell> ParseLife106(string text)
     {
         var liveCells = new HashSet<GridCell>();
@@ -43,11 +34,7 @@ public static class FileIOComponent
 
         return liveCells;
     }
-
-    /// <summary>
-    /// Serialises the live set to Life 1.06, emitting cells in the order the
-    /// simulation yields them (no reordering).
-    /// </summary>
+    
     public static string ConvertToLife106(IEnumerable<GridCell> liveCells)
     {
         var sb = new StringBuilder();
