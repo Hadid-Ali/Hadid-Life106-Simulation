@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
       }
 
       HashSet<GridCell> liveCells = FileIOComponent.ParseLife106(textAsset.text);
-      Debug.Log($"[GameOfLife] Parsed {liveCells.Count} live cells from '{textAsset.name}'.");
+      Debug.Log($" Parsed {liveCells.Count} live cells from '{textAsset.name}'.");
 
       liveCells = SimulationHandler.Run(liveCells, _iterations);
 
@@ -48,7 +48,7 @@ public class GameController : MonoBehaviour
          Directory.CreateDirectory(dir);
 
       File.WriteAllText(fullPath, contents);
-      Debug.Log($"[GameOfLife] Wrote result to {fullPath}");
+      Debug.Log($"Wrote result to {fullPath}");
 
 #if UNITY_EDITOR
       AssetDatabase.Refresh();      
